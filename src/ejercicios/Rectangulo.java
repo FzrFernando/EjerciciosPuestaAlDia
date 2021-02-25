@@ -2,26 +2,31 @@ package ejercicios;
 
 public class Rectangulo {
 
-	private double longitud = 1.0;
-	private double ancho = 1.0;
+	private double longitud;
+	private double ancho;
 	
-	public Rectangulo(int longitud, int ancho) {
+	public Rectangulo(double longitud, double ancho) {
 		super();
-		this.longitud = longitud;
-		this.ancho = ancho;
+		this.setLongitud(longitud);;
+		this.setAncho(ancho);
+	}
+
+	public Rectangulo() {
+		super();
+		this.longitud = 1.0;
+		this.ancho = 1.0;
 	}
 
 	public double getLongitud() {
 		return longitud;
 	}
 	
-	public boolean setLongitud(int longitud) {
-		this.longitud = longitud;
-		if (longitud > 0 && longitud < 20) {
-			return true;
+	public void setLongitud(double longitud) {
+		if ((longitud > 0) && (longitud < 20)) {
+			this.longitud = longitud;
 		}
 		else {
-			return false;
+			this.longitud = 0;
 		}
 	}
 	
@@ -29,19 +34,18 @@ public class Rectangulo {
 		return ancho;
 	}
 	
-	public boolean setAncho(int ancho) {
-		this.ancho = ancho;
-		if (ancho > 0 && ancho < 20) {
-			return true;
+	public void setAncho(double ancho) {
+		if ((ancho > 0 && ancho < 20)) {
+			this.ancho = ancho;
 		}
 		else {
-			return false;
+			this.ancho = 0;
 		}
 	}
 	
 	public double calcularPerimetro (int longitud, int ancho) {
 		double perimetro;
-		perimetro = this.longitud *2 + this.ancho*2;
+		perimetro = ((this.longitud *2) + (this.ancho*2));
 		return perimetro;
 	}
 	
@@ -83,6 +87,8 @@ public class Rectangulo {
 	public String toString() {
 		return "Rectangulo [longitud=" + longitud + ", ancho=" + ancho + "]";
 	}
+
+	
 
 	
 }
