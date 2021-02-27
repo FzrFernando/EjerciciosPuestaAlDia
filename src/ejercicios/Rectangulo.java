@@ -26,7 +26,7 @@ public class Rectangulo {
 			this.longitud = longitud;
 		}
 		else {
-			this.longitud = 0;
+			this.longitud = 1;
 		}
 	}
 	
@@ -39,20 +39,16 @@ public class Rectangulo {
 			this.ancho = ancho;
 		}
 		else {
-			this.ancho = 0;
+			this.ancho = 1;
 		}
 	}
 	
-	public double calcularPerimetro (int longitud, int ancho) {
-		double perimetro;
-		perimetro = ((this.longitud *2) + (this.ancho*2));
-		return perimetro;
+	public double calcularPerimetro () {
+		return ((this.longitud + this.ancho) * 2);
 	}
 	
-	public double calcularArea (int longitud, int ancho) {
-		double area;
-		area = this.longitud * this.ancho;
-		return area;
+	public double calcularArea () {
+		return (this.longitud * this.ancho);
 	}
 
 	@Override
@@ -85,7 +81,7 @@ public class Rectangulo {
 
 	@Override
 	public String toString() {
-		return "Rectangulo [longitud=" + longitud + ", ancho=" + ancho + "]";
+		return "Rectangulo [longitud=" + longitud + ", ancho=" + ancho + ", área=" + calcularArea() + ", perímetro=" + calcularPerimetro() +"]";
 	}
 
 	
