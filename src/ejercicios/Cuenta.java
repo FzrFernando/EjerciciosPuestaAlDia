@@ -1,18 +1,18 @@
 package ejercicios;
 
-public class cuenta {
+public class Cuenta {
 
 	private int numeroCuenta;
     private double saldo=0.0;
     private int numReintegros=0;
     private int numIngresos=0;
     
-	public cuenta(int numeroCuenta) {
+	public Cuenta(int numeroCuenta) {
 		super();
 		this.numeroCuenta = numeroCuenta;
 	}
 
-	public cuenta(int numeroCuenta, double saldo) {
+	public Cuenta(int numeroCuenta, double saldo) {
 		super();
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = saldo;
@@ -50,7 +50,7 @@ public class cuenta {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		cuenta other = (cuenta) obj;
+		Cuenta other = (Cuenta) obj;
 		if (numeroCuenta != other.numeroCuenta)
 			return false;
 		return true;
@@ -65,4 +65,12 @@ public class cuenta {
 		saldo = saldo - cantidad;
 		this.numReintegros++;
 	}
+
+	@Override
+	public String toString() {
+		return "Cuenta [numeroCuenta=" + numeroCuenta + ", saldo=" + saldo + ", numReintegros=" + numReintegros
+				+ ", numIngresos=" + numIngresos + "]";
+	}
+	
+	
 }
