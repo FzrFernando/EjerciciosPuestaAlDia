@@ -6,7 +6,7 @@ public class MainCuenta {
 	
 	static Scanner teclado = new Scanner (System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
 		double cantidad;
@@ -25,13 +25,13 @@ public class MainCuenta {
 			
 			switch(opc) {
 			case '1':
-				System.out.println("Introduzca el dinero a retirar");
+				System.out.println("Introduzca el dinero a retirar(Tiene que ser positivo)");
 				cantidad = Double.parseDouble(teclado.nextLine());
 				c1.reintegro(cantidad);
 				System.out.println(c1.toString());
 				break;
 			case '2':
-				System.out.println("Introduzca la cantidad a ingresar");
+				System.out.println("Introduzca la cantidad a ingresar(Tiene que ser positiva)");
 				cantidad = Double.parseDouble(teclado.nextLine());
 				c1.ingreso(cantidad);
 				System.out.println(c1.toString());

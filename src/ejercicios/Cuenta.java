@@ -10,6 +10,9 @@ public class Cuenta {
 	public Cuenta(int numeroCuenta) {
 		super();
 		this.numeroCuenta = numeroCuenta;
+		this.saldo = saldo;
+		this.numIngresos = numIngresos;
+		this.numReintegros = numReintegros;
 	}
 
 	public Cuenta(int numeroCuenta, double saldo) {
@@ -61,7 +64,10 @@ public class Cuenta {
 		this.numIngresos++;
 	}
     
-	public void reintegro (double cantidad) {
+	public void reintegro (double cantidad) throws Exception {
+		if (cantidad > saldo) {
+			throw new Exception("No puedes sacar más dinero de lo que tienes");
+		}
 		saldo = saldo - cantidad;
 		this.numReintegros++;
 	}
