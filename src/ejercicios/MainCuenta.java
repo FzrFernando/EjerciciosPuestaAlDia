@@ -25,16 +25,26 @@ public class MainCuenta {
 			
 			switch(opc) {
 			case '1':
-				System.out.println("Introduzca el dinero a retirar(Tiene que ser positivo)");
-				cantidad = Double.parseDouble(teclado.nextLine());
-				c1.reintegro(cantidad);
-				System.out.println(c1.toString());
+				try {
+					System.out.println("Introduzca el dinero a retirar(Tiene que ser positivo)");
+					cantidad = Double.parseDouble(teclado.nextLine());
+					c1.reintegro(cantidad);
+					System.out.println(c1.toString());
+				}
+				catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 			case '2':
-				System.out.println("Introduzca la cantidad a ingresar(Tiene que ser positiva)");
-				cantidad = Double.parseDouble(teclado.nextLine());
-				c1.ingreso(cantidad);
-				System.out.println(c1.toString());
+				try {
+					System.out.println("Introduzca la cantidad a ingresar(Tiene que ser positiva)");
+					cantidad = Double.parseDouble(teclado.nextLine());
+					c1.ingreso(cantidad);
+					System.out.println(c1.toString());
+				}
+				catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 			case '3':
 				c1.toString();

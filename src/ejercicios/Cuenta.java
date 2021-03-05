@@ -10,15 +10,20 @@ public class Cuenta {
 	public Cuenta(int numeroCuenta) {
 		super();
 		this.numeroCuenta = numeroCuenta;
-		this.saldo = saldo;
-		this.numIngresos = numIngresos;
-		this.numReintegros = numReintegros;
+		this.saldo = 0.0;
+		this.numIngresos = 0;
+		this.numReintegros = 0;
 	}
 
-	public Cuenta(int numeroCuenta, double saldo) {
+	public Cuenta(int numeroCuenta, double saldo) throws Exception {
 		super();
-		this.numeroCuenta = numeroCuenta;
-		this.saldo = saldo;
+		if (saldo < 0) {
+			throw new Exception ("Su saldo es negativo, debe ser positivo");
+		}
+		else {
+			this.numeroCuenta = numeroCuenta;
+			this.saldo = saldo;
+		}
 	}
 
 	public int getNumeroCuenta() {
@@ -59,7 +64,10 @@ public class Cuenta {
 		return true;
 	}
     
-	public void ingreso (double cantidad) {
+	public void ingreso (double cantidad) throws Exception {
+		if (cantidad < 0) {
+			throw new Exception("Ingrese una cantidad válida");
+		}
 		saldo = saldo + cantidad;
 		this.numIngresos++;
 	}
