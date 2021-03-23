@@ -47,7 +47,7 @@ public class CuentaJoven extends Cuenta {
 	}
 	
 	public void reintegro(double cantidad) throws Exception {
-		if (esTitularValido() == true) {
+		if (esTitularValido()) {
 			super.reintegro(cantidad);
 		}
 		else {
