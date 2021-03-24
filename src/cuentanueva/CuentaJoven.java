@@ -2,11 +2,14 @@ package cuentanueva;
 
 public class CuentaJoven extends Cuenta {
 	
-	public CuentaJoven(int numeroCuenta) {
-		super(numeroCuenta);
+	public CuentaJoven(String titular, int numeroCuenta, double saldo, int bonificacion, int edad) throws Exception {
+		super(numeroCuenta, saldo);
 		this.titular = titular;
 		this.bonificacion = bonificacion;
 		this.edad = edad;
+		if (esTitularValido() == false) {
+			throw new Exception("No es un titular válido");
+		}
 	}
 
 	private String titular;
@@ -83,7 +86,7 @@ public class CuentaJoven extends Cuenta {
 
 	@Override
 	public String toString() {
-		return "CuentaJoven, bonificacion=" + bonificacion + "%";
+		return "CuentaJoven: titular: " + titular + " bonificación= " + (super.getSaldo() + (super.getSaldo()*(bonificacion/100.0))) + " edad=" + edad;
 	}
 	
 	

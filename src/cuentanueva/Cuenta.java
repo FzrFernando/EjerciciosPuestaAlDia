@@ -3,7 +3,7 @@ package cuentanueva;
 public class Cuenta {
 
 	private int numeroCuenta;
-    private double saldo=0.0;
+    protected double saldo=0.0;
     private int numReintegros=0;
     private int numIngresos=0;
     
